@@ -1,0 +1,47 @@
+1. INTRODUCTION
+
+motivation
+ - describe security issues regarding IPv6
+
+problem
+
+solution
+
+scope 
+  ubuntu
+
+2. LITERATURE STUDY
+What are the possibilties regarding the different circumstances
+
+  1 active IPv6 address 
+	brows IPv6 NDP cache for MAC --> look in all switches for this MAC
+  2 inactive IPv6 address
+	statefull autoconf: look in DHCPv6 log and hope the DUID is the MAC address
+	stateless autoconf: when ff:fe --> EUI-64 address --> MAC is in IPv6 address
+		privacy extension useless unless
+			1 webserver logged user name with IPv6 address
+			2 Access Control List (ACL) with log-input keyword ro IPv6 + MAC
+ 
+
+
+3. PROOF OF CONCEPT
+usecase:
+ 1 each node in the network has one IPv4 and one stateless IPv6 
+ 
+automate  MAC tracing through IPv6 address
+
+
+4. FUTURE WORK
+ - discover rogue router devices
+
+5. DISCUSSION
+interface eth1
+{
+   AdvSendAdvert on;
+   prefix 2001:db8:e00:429::/64
+   {
+   };
+};
+
+
+
