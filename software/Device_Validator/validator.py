@@ -29,7 +29,5 @@ for packet in pcap:
         packet_mac=hex((packet_to_mac_bin) ^ (1<<41))[2:]
         mac_request= requests.get("http://api.macvendors.com/{}".format(packet_mac))
         print("{} - {}".format(packet_mac, mac_request.text))
-
-        #print("Unflipped: {}\nFlipped:   {}".format(hex(int(packet_to_mac_bin, 2)), hex(int(str(int(packet_to_mac_bin) ^ int("000000100000000000000000000000000000000000000000")), 2))))
     else:
         pass
